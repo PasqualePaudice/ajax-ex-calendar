@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    height: 100px;
+}
+
+
+.arrow{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 100px;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
