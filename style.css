@@ -34,6 +34,58 @@ header h1 {
 }
 
 main{
+    margin: auto;
     display: flex;
     justify-content: center;
+}
+
+.container{
+    width: 90%;
+}
+
+ul{
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+li{
+    padding-top: 5px;
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+    display: inline-block;
+    position: relative;
+    margin:0;
+
+
+
+}
+
+p{
+
+    display: inline-block;
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50% , 50%);
+
+
+}
+
+.margin-no{
+    margin-bottom: -80px;
+}
+
+.day{
+    margin-top: 20px;
+    margin-right: -4px;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid black;
+    line-height: 3;
+    background-color: lightblue;
+
 }

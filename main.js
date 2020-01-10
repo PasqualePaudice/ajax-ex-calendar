@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+    var template_html = $('#template-li').html();
+    var template_function = Handlebars.compile(template_html);
+
+
 
 
     var numero = '';
@@ -12,6 +16,9 @@ $(document).ready(function(){
 
     var mese = data_base.get('month');
     console.log(mese);
+    ;
+
+
 
 
 
@@ -21,6 +28,8 @@ $(document).ready(function(){
 
 
     aggiungiGiorni(giorni_mese);
+
+
 
     console.log($('h1 span').text());
 
@@ -69,6 +78,12 @@ $(document).ready(function(){
         });
 
 
+
+
+
+
+        // --------------- FUNZIONI ----------------
+
         function chiamataAjax(){
 
 
@@ -92,13 +107,15 @@ $(document).ready(function(){
 
                     console.log(data_feste);
 
-                    $('li[data-mese="'+ data_feste +'"]').append(' - ' +feste[i].name);
+                    $('li[data-mese="'+ data_feste +'"]').append(' <p>' +feste[i].name+'</p>');
                     $('li[data-mese="'+ data_feste +'"]').css({'color':'red'});
+
+
 
                 }
 
 
-
+                console.log('chiamate');
 
 
             },
@@ -128,6 +145,8 @@ $(document).ready(function(){
 
     function aggiungiGiorni(giorniMese ){
 
+
+
         $('main ul').empty();
         $('h1 span').empty();
 
@@ -136,12 +155,28 @@ $(document).ready(function(){
         $('h1 span').append(nome_mese);
 
 
+        var quad_vuoti = data_base.day();
+
+
+
+
+
+        for (var i = 0; i <= quad_vuoti; i++) {
+            $('main ul').append('<li class="margin-no"></li>');
+        }
 
         for (var numero = 01; numero <= giorniMese; numero++) {
             $('main ul').append('<li data-mese="'+ numero +'">' + numero + ' ' + nome_mese +'</li>' );
         }
 
+        for (var i = 0; i <= quad_vuoti; i++) {
+            $('main ul').append('<li class="margin-no"></li>');
+        }
+
+
     }
+
+
 
 
 
